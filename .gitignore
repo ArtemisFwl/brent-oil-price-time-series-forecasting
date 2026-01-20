@@ -2,7 +2,7 @@
 venv/
 .env/
 .env.bak/
-
+venv310/
 # Python cache
 __pycache__/
 *.py[cod]

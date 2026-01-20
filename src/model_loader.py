@@ -7,7 +7,7 @@ def load_lstm_model():
     """
     Load the trained LSTM model from the disk
     """
-    model=load_model(LSTM_MODEL_PATH)
+    model=load_model(LSTM_MODEL_PATH, compile=False)
     return model
 
 def load_scaler():

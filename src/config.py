@@ -2,7 +2,7 @@ import os
 
 #Project Root
 
-os.path.abspath(os.join(os.path.dirname(__file__), ".."))
+PROJECT_ROOT=os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 #Data Paths
 
@@ -13,7 +13,7 @@ PROCESSED_DATA_PATH=os.path.join(PROJECT_ROOT, "data", "processed")
 #Model Paths 
 
 MODEL_DIR= os.path.join(PROJECT_ROOT, "models")
-LSTM_MODEL_PATH= os.path.join(MODEL_DIR, "lstm_brent_model")
+LSTM_MODEL_PATH= os.path.join(MODEL_DIR, "lstm_brent_model_tf.keras")
 SCALER_PATH= os.path.join(MODEL_DIR, "price_scaler.pkl")
 
 # Time series parameters

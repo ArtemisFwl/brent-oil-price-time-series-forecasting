@@ -3,7 +3,7 @@ import pandas as pd
 
 from src.model_loader import load_lstm_model, load_scaler 
 from src.data_preprocessing import preprocess_price_series
-from src.feature_engineering import create_lstm_sequences 
+from src.feature_engineering import create_lstm_input 
 from src.config import WINDOW_SIZE
 
 class BrentPriceForecaster:
@@ -40,10 +40,11 @@ class BrentPriceForecaster:
         recent_scaled=self.scaler.transform(recent_price)
 
         #Create LSTM input 
-        X=create_lstm_sequences(recent_scaled, WINDOW_SIZE)
+        X = create_lstm_input(recent_scaled, WINDOW_SIZE)
 
         #Predict 
-        pred_scaled=self.model.predict(X[-1].reshape(1, WINDOW_SIZE, 1))
+        pred_scaled = self.model.predict(X)
+        
 
         #Inverse Scale 
         pred=self.scaler.inverse_transform(pred_scaled)
